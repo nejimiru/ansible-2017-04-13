@@ -1,0 +1,34 @@
+---
+- name: update apt
+  apt:
+    update_cache: yes
+
+- name: install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: enable nginx
+  service: 
+    name: nginx
+    state: started
+    enabled: yes
+- name: configure nginx
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-enabled/default
+  notify:
+    - restart nginx
+
+- name: make folder for app
+  file:
+    path: /srv/web
+    state: directory
+
+- name: create pages
+  template:
+    src: '{{ item }}.html.j2'
+    dest: /srv/web/{{ item }}.html
+  with_items:
+    - index
+    - countries

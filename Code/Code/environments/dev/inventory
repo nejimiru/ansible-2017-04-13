@@ -1,0 +1,2 @@
+[web]
+vovcheg ansible_host=52.209.16.95 ansible_user=ubuntu ansible_private_key_file=id_rsa_ansible-2017-apr 
