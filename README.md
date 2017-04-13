@@ -36,3 +36,14 @@
 
 
 ### Тесты JS - селениум
+
+### verialize поверх vmware - сделать виртуальную машину
+
+
+# ghj
+```bash 
+sudo apt-get install libssl-dev
+
+sudo pip install -r requirements.txt 
+
+```
